@@ -1,0 +1,18 @@
+<div class="menu">
+	<h1 style="color: white">My Recipes</h1>
+	<ul>
+		<li><a routerLink="/breakfast/2">Breakfast</a></li>
+		<li><a routerLink="/lunch/3">Lunch</a></li>
+		<li><a routerLink="/dinner/4">Dinner</a></li>
+		<li><a routerLink="/dessert/6">Dessert</a></li>
+		<li><a routerLink="/drinks/5">Drinks</a></li>
+	</ul>
+</div>
+
+<div class="image-wrapper" *ngIf="posts">
+	<div *ngFor="let post of posts" class="inner-image-wrapper">
+		<div>
+			<img src="{{ post.guid.rendered }}" style="">
+		</div>
+	</div>
+</div>

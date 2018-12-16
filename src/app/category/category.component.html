@@ -1,0 +1,8 @@
+<div class="newspaper" *ngIf="posts">
+	<div *ngFor="let post of posts">	
+		<a routerLink="{{ post.slug }}">
+			<img src="{{ post['_embedded']['wp:featuredmedia'][0]['source_url'] }}">
+		</a>
+	</div>
+</div>
+

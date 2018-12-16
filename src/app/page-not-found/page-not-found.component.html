@@ -1,0 +1,12 @@
+<div class="menu">
+	<h1>Page not found</h1>
+	<p>Please go <a (click)="goBack()">back</a>.</p>
+</div>
+
+
+<div class="newspaper" *ngIf="posts">
+	<div *ngFor="let post of posts">
+		<img src="{{ post.guid.rendered }}">
+	</div>
+</div>
+
