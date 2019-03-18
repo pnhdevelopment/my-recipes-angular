@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { CategoryComponent } from './category/category.component';
-import { RecipeComponent } from './recipe/recipe.component';
+
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MealsComponent } from './meals/meals.component';
+import { MealComponent } from './meal/meal.component';
 
 
 const appRoutes: Routes = [
-  { path: ':category/:id',                component: CategoryComponent },
-  { path: ':category/:id/:recipe-name',   component: RecipeComponent },
+  { path: ':meal/:id',                    component: MealsComponent },
+  { path: ':meal/:id/:mealName',          component: MealComponent },
   { path: '',                             component: HomeComponent },
   { path: '**',                           component: PageNotFoundComponent }
 ];
@@ -25,8 +25,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     PageNotFoundComponent,
-    CategoryComponent,
-    RecipeComponent
+    MealsComponent,
+    MealComponent
   ],
   imports: [
     BrowserModule,

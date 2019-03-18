@@ -1,5 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
 
-body{
-	margin: 1rem;
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid orange;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    margin-top: 5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
