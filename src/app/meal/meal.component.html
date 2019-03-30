@@ -1,0 +1,13 @@
+<div class="loader" *ngIf="!post"></div>
+
+<div class="container" *ngIf="post">
+	<div class="col-8 m-auto">
+		<h1 class="text-center">{{post.title.rendered}}</h1>
+		<div class="meal-wrapper">
+			<img
+				src="{{post['_embedded']['wp:featuredmedia'][0]['source_url']}}"
+			/>
+		</div>
+		<div [innerHTML]="post.content.rendered"></div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<div class="loader" *ngIf="!posts"></div>
+
+<div class="image-wrapper m-3" *ngIf="posts" >
+    <a routerLink={{post.slug}} *ngFor="let post of posts">
+      <div class="inner-image-wrapper">
+        <div>
+          <img
+            src="{{post['_embedded']['wp:featuredmedia'][0]['source_url']}}"
+            alt="hello"
+            #el (load)="imageFadeIn(el)"
+          />
+        </div>
+      </div>
+    </a>
+</div>
+
+
