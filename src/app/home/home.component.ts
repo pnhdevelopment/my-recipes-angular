@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
-
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +15,17 @@ export class HomeComponent implements OnInit {
   public url: string = 'https://www.my-recipes-api.pnhdevelopment.com/wp-json/wp/v2/media?per_page=16';
   
 
-  constructor(private http: HttpClient, private titleService: Title){
-    this.titleService.setTitle( 'My Recipes' );   
+  constructor(
+    private http: HttpClient,
+    private titleService: Title,
+    private meta: Meta){
+
+      this.titleService.setTitle( 'My Recipes' );
+
+      this.meta.addTag({ name: 'description', content: 'A collection of delicious recipes. Ideal for breakfast, lunch or dinner.' });
+      this.meta.addTag({ name: 'author', content: 'pnhdevelopment' });
+      this.meta.addTag({ name: 'keywords', content: 'Recipes, Breakfast, Lunch, Dinner, Drinks' });
+
   }
 
 
