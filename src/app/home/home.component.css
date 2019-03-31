@@ -86,3 +86,13 @@ div.menu ul li a:hover{
 }
 
 
+/* Logo */
+svg{
+	fill: white;
+	transition: 0.2s;
+}
+
+svg:hover{
+	fill: orange;
+}
+
