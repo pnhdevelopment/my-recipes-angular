@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
 
   	this.http.get(this.url).subscribe(res => {
     	this.posts = res;
+      console.log(this.posts);
   	});
 
   }

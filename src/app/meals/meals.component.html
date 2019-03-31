@@ -6,7 +6,7 @@
         <div>
           <img
             src="{{post['_embedded']['wp:featuredmedia'][0]['source_url']}}"
-            alt="hello"
+            alt={{post.title.rendered}}
             #el (load)="imageFadeIn(el)"
           />
         </div>

@@ -6,6 +6,7 @@
 		<div class="meal-wrapper">
 			<img
 				src="{{post['_embedded']['wp:featuredmedia'][0]['source_url']}}"
+				alt={{post.title.rendered}}
 			/>
 		</div>
 		<div [innerHTML]="post.content.rendered"></div>
