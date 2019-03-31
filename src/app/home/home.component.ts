@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -14,7 +15,9 @@ export class HomeComponent implements OnInit {
   public url: string = 'https://www.my-recipes-api.pnhdevelopment.com/wp-json/wp/v2/media?per_page=16';
   
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private titleService: Title){
+    this.titleService.setTitle( 'My Recipes' );   
+  }
 
 
   ngOnInit() {
@@ -23,8 +26,13 @@ export class HomeComponent implements OnInit {
 
   	this.http.get(this.url).subscribe(res => {
     	this.posts = res;
-  	});  	
+  	});
+
   }
+
+  // public setTitle( newTitle: string) {
+  //   this.titleService.setTitle( newTitle );
+  // }
 
   imageFadeIn(el){
     el.style.opacity = 1;

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
+
 
 @Component({
   selector: 'app-meal',
@@ -12,18 +15,26 @@ export class MealComponent implements OnInit {
 	public URL: string;
 	public post: any;
 
-	constructor( public route: ActivatedRoute, public http: HttpClient ){
+	constructor(
+		public route: ActivatedRoute,
+		public http: HttpClient,
+		private titleService: Title ){
 
 	    this.URL = "https://my-recipes-api.pnhdevelopment.com/wp-json/wp/v2/posts?_embed&slug=" + this.route.snapshot.paramMap.get('mealName');
 
 	    this.http.get(this.URL).subscribe(response => {
 			this.post = response[0];
+			console.log();
+
+			this.titleService.setTitle( this.post.title.rendered + ' - My Recipes' ); 
 		});
 	
-	}
+	}	
 
-	ngOnInit() { 	
+
+	ngOnInit(){	
   	}
+
 
 	imageFadeIn(el){
 		el.style.opacity = 1;
